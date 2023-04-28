@@ -28,10 +28,12 @@ def generate_training_data(file_content):
             ]
         }
     ]
+##############
 
-
-file_content = "Osan3 LOI"
+json_objects = []
+file_content = "Osan3 LOI..."
 prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
+print(prompt)
 
 
 print(json.dumps(cb.json_objects, indent=2))
