@@ -2,23 +2,36 @@
 import json
 from modules import conversation_builder as cb
 
-doc_name = "osan3-happy-org"
-id = "1"
-question = "Your question here"
-answer = "Your answer here"
-json_object = cb.main(doc_name, id, question, answer)
+def generate_training_data(file_content):
+    prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
 
-question = "Your question here"
-answer = "Your 2nd answer here"
-cb.add_conversation(json_object, question, answer)
+    questions_and_answers = [
+        {
+            "id": "osan3-happy-org_1",
+            "conversations": [
+                {
+                    "from": "human",
+                    "value": "What is the purpose of the Osan3 Alpha Program?"
+                },
+                {
+                    "from": "gpt",
+                    "value": "The Osan3 Alpha Program aims to develop a custom chatbot for Happy Org or its target industry. The chatbot will integrate with Happy Org's existing systems, improve efficiency, and enhance the user experience when navigating Happy Org products."
+                },
+                {
+                    "from": "human",
+                    "value": "How much will Happy Org sponsor for the chatbot development?"
+                },
+                {
+                    "from": "gpt",
+                    "value": "The feedback waiver acknowledges that feedback received from Osan3 is advisory in nature and the final decision on whether to follow it rests with the company."
+                }
+            ]
+        }
+    ]
 
-id = "2"
-question = "Your question here"
-answer = "Your answer here"
-json_object = cb.main(doc_name, id, question, answer)
 
-question = "Your question here"
-answer = "Your 2nd answer here"
-cb.add_conversation(json_object, question, answer)
+file_content = "Osan3 LOI"
+prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
+
 
 print(json.dumps(cb.json_objects, indent=2))
