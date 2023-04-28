@@ -61,4 +61,8 @@ prompt_results = [
 ]
 
 question = print(prompt_results[3][1])
+
+# Ask for diverse answers for each question.
+# put answers in an array [a1, a2, a3]
+
 #print(json.dumps(cb.json_objects, indent=2))
