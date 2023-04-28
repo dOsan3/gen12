@@ -1,6 +1,7 @@
 # example.py
 import json
 from modules import conversation_builder as cb
+from modules import text_reader
 
 def generate_training_data(file_content):
     prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
@@ -28,12 +29,23 @@ def generate_training_data(file_content):
             ]
         }
     ]
-##############
+############## Start
 
 json_objects = []
-file_content = "Osan3 LOI..."
-prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
-print(prompt)
+file_name = 'loi-osan3-happy-org.txt'
+file_content = text_reader.read_text_file(file_name)
 
+print(file_content)
 
-print(json.dumps(cb.json_objects, indent=2))
+### Load prompt with file content
+#form = "\
+#```[[Example question, Example answer],[Example question 2, Example answer 2]]"
+#prompt = "Generate diverse questions and answers in the form " + form + " based on the follwoing content: " + file_content
+#
+#print(prompt)
+#
+#
+##prompt_results = llm(prompt)
+#
+#
+#print(json.dumps(cb.json_objects, indent=2))
