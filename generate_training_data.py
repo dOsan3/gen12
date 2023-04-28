@@ -1,6 +1,8 @@
 # 1. generate_answers: mock response with two questions and answers from file in correct form.
 # 2. expand_answers: mock up up with several answers (some relevant and some non-diverse, too).
 
+training_data = []
+
 def generate_training_data(file_content):
     prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
     questions_and_answers =
@@ -30,14 +32,14 @@ def generate_training_data(file_content):
     save(expanded_questions_and_answers)
 
 def expand_answers(questions_and_answers):
-    training_data = []
     # "What is the purpose of the Osan3 Alpha Program?"
     # How much will Happy Org sponsor for the chatbot development?
     for i, qa_pair in enumerate(questions_and_answers):
         #question = qa_pair["question"]
+        #To be replaced with `qa_pair` output
         question = "What is the purpose of the Osan3 Alpha Program?"
         # To be replaced with `generate_more_answers` output
-        more_answers = generate_more_answers(question)
+        #more_answers = generate_more_answers(question)
         more_answers = [
             "The purpose of the Osan3 Alpha Program is to develop a custom chatbot designed to meet the specific needs of Happy Org or its target industry. The program aims to create a tailored solution that effectively integrates with Happy Org's existing systems, streamlines efficiency, and enhances the user experience when navigating Happy Org products. By partnering with Happy Org, Osan3 also seeks to foster innovation and collaboration, ultimately promoting the benefits of the chatbot solution within the target industry.",
             "The purpose of the Osan3 Alpha Program is to foster the development of custom chatbot solutions tailored to meet the specific needs of organizations, like Happy Org, or their target industries. The program aims to create innovative, effective, and user-friendly chatbot systems that integrate seamlessly with the existing systems of the participating organizations, streamline efficiency, and enhance user experience when navigating their products. Through partnerships, sponsorships, and collaboration, the Osan3 Alpha Program seeks to drive innovation and growth in chatbot technology and applications, while promoting the benefits of these solutions within the target industries.",
@@ -46,6 +48,7 @@ def expand_answers(questions_and_answers):
          ]
 
         for answer in more_answers:
+            # use new module populate-training-data
             training_data.append(create_training_data_entry(i, question, answer))
 
     return training_data
