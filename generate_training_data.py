@@ -3,8 +3,6 @@
 
 def generate_training_data(file_content):
     prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
-    #questions_and_answers = generate_answers(prompt)
-    # To be replaced with `generate_answers` output
     questions_and_answers =
     {
       "id": "osan3-happy-org_1",
@@ -83,19 +81,16 @@ def expand_answers(questions_and_answers):
     }
 
 def create_training_data_entry(id, question, answer):
-    return {
-        "id": f"osan3-happy-org_{id}",
-        "conversations": [
-            {
-                "from": "human",
-                "value": question
-            },
-            {
-                "from": "gpt",
-                "value": answer
-            }
-        ]
-    }
+    return [
+        {
+        "from": "human",
+        "value": question
+        },
+        {
+            "from": "gpt",
+            "value": answer
+        }
+    ]
 
 def save(expanded_questions_and_answers):
     # Save the expanded questions and answers to a file in the desired format
