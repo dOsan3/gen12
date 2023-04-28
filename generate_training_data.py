@@ -35,14 +35,12 @@ json_objects = []
 file_name = 'loi-osan3-happy-org.txt'
 file_content = text_reader.read_text_file(file_name)
 
-print(file_content)
-
 ### Load prompt with file content
-#form = "\
-#```[[Example question, Example answer],[Example question 2, Example answer 2]]"
-#prompt = "Generate diverse questions and answers in the form " + form + " based on the follwoing content: " + file_content
-#
-#print(prompt)
+form = "\
+```[[Example question, Example answer],[Example question 2, Example answer 2]]```"
+prompt = "Generate diverse questions and answers in the form " + form + " based on the follwoing content: ```" + file_content + "```"
+
+print(prompt)
 #
 #
 ##prompt_results = llm(prompt)
