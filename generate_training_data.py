@@ -37,13 +37,28 @@ file_content = text_reader.read_text_file(file_name)
 
 ### Load prompt with file content
 form = "\
-```[[Example question, Example answer],[Example question 2, Example answer 2]]```"
-prompt = "Generate diverse questions and answers in the form " + form + " based on the follwoing content: ```" + file_content + "```"
+```[  [question, answer],  [question, answer]   ]```"
+prompt = "Generate diverse questions and answers in a json list, where each question answer pair is also a list, in the example form " + form + " based on the follwoing content: ```" + file_content + "```"
 
-print(prompt)
+#print(prompt)
 #
 #
-##prompt_results = llm(prompt)
+#prompt_results = llm(prompt)
+
 #
 #
+prompt_results = [
+["What is the purpose of the Osan3 Alpha Program?", "The purpose of the Osan3 Alpha Program is to develop a custom chatbot designed to meet the specific needs of Happy Org or its target industry."],
+["How much financial support will Happy Org provide for the chatbot development?", "$25,000."],
+["What will Osan3 provide in return for the financial support?", "Osan3 will create a tailored chatbot solution that effectively integrates with Happy Org's existing systems, streamlines efficiency, and enhances the user experience when navigating Happy Org products."],
+["What are the key terms of the partnership between Happy Org and Osan3?", "The key terms include sponsorship, chatbot development, access to and governance control of open-source chatbot projects, ownership, alignment, collaboration and support, promotion of the chatbot solution, reporting and accountability, confidentiality, feedback waiver, and waiver for independent development."],
+["What percentage of governance control can Happy Org gain after the projects exit the Alpha Program?", "Happy Org can gain 80% governance control for $70,000."],
+["What percentage of ownership will Osan3 have in the Chatbot Alpha Program?", "Osan3 will have 10% ownership in the Chatbot Alpha Program."],
+["What is the role of Happy Org in collaborating with Chatbot Alpha Program participants?", "Happy Org will have the opportunity to collaborate with any Chatbot Alpha Program participants and provide guidance and support, showcasing their expertise and thought leadership."],
+["How will both parties promote the chatbot solution?", "Both parties will work together to promote the benefits of the chatbot solution within the target industry, focusing on highlighting Happy Org's innovative contributions and encouraging user engagement."],
+["What kind of updates will Osan3 provide to Happy Org?", "Osan3 will provide regular updates on the progress and financials of the sponsored alpha programs, ensuring transparency and alignment with strategic objectives."],
+["What is the nature of the feedback waiver agreed upon by the company and participants?", "The company and participants agree to waive any claims against Osan3 Party related to the feedback they receive, recognizing that it is advisory in nature and the final decision on whether to follow such feedback rests with the company."]
+]
+
+question = print(prompt_results[3][1])
 #print(json.dumps(cb.json_objects, indent=2))

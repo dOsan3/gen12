@@ -1,0 +1,77 @@
+{
+  "id": "osan3-happy-org_1",
+  "conversations": [
+    {
+    "from": "human",
+    "value": "What is the purpose of the Osan3 Alpha Program?"
+    },
+    {
+    "from": "gpt",
+    "value": "The Osan3 Alpha Program aims to develop a custom chatbot for Happy Org or its target industry. The chatbot will integrate with Happy Org's existing systems, improve efficiency, and enhance the user experience when navigating Happy Org products."
+    },
+    {
+    "from": "human",
+    "value": "How much will Happy Org sponsor for the chatbot development?"
+    },
+    {
+    "from": "gpt",
+    "value": "Happy Org will provide financial support of $25,000 for the chatbot development with Osan3."
+    },
+    {
+    "from": "human",
+    "value": "What will Osan3 provide in return for the sponsorship?"
+    },
+    {
+    "from": "gpt",
+    "value": "Osan3 will develop a custom chatbot capable of executing Happy Org APIs, answering questions about Happy Org data for specific use cases, and assisting users in navigating Happy Org products. They will also provide access to relevant open-source projects and regular progress updates."
+    },
+    {
+    "from": "human",
+    "value": "What ownership and governance control options does Happy Org have?"
+    },
+    {
+    "from": "gpt",
+    "value": "Upon the projects' exit from the Alpha Program, Happy Org will have the option to gain 80% governance control for $70,000."
+    },
+    {
+    "from": "human",
+    "value": "What ownership stake will Osan3 have in the Chatbot Alpha Program?"
+    },
+    {
+    "from": "gpt",
+    "value": "Osan3 will gain 10% ownership in the Chatbot Alpha Program, aligning themselves with the program's innovation and long-term success."
+    },
+    {
+    "from": "human",
+    "value": "What are the collaboration and promotional aspects of the partnership?"
+    },
+    {
+    "from": "gpt",
+    "value": "Happy Org will have the opportunity to collaborate with Chatbot Alpha Program participants and provide guidance and support. Both parties will work together to promote the chatbot solution within the target industry, focusing on Happy Org's innovative contributions and encouraging user engagement."
+    },
+    {
+    "from": "human",
+    "value": "What are the reporting and accountability requirements?"
+    },
+    {
+    "from": "gpt",
+    "value": "Osan3 will provide regular updates on the progress and financials of the sponsored alpha programs to Happy Org, ensuring transparency and alignment with strategic objectives."
+    },
+    {
+    "from": "human",
+    "value": "How is confidentiality handled in the agreement?"
+    },
+    {
+    "from": "gpt",
+    "value": "Both parties agree to maintain confidentiality regarding the terms of this offer, associated materials, agreements, and any confidential information shared during the program. Confidential information includes non-public, commercially proprietary, or sensitive information or materials of the disclosing party, such as proprietary intellectual property."
+    },
+    {
+    "from": "human",
+    "value": "What is the feedback waiver and independent development waiver about?"
+    },
+    {
+    "from": "gpt",
+    "value": "The feedback waiver acknowledges that feedback received from Osan3 is advisory in nature and the final decision on whether to follow it rests with the company."
+    }
+  ]
+}
