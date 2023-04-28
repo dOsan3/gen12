@@ -1,0 +1,16 @@
+Under this LOI, Happy Org will sponsor the Osan3 Alpha Program for the development of a custom chatbot designed to meet the specific needs of Happy Org or its target industry. Happy Org will provide financial support of $25,000 for the chatbot development with Osan3. In return, Osan3 will create a tailored solution that effectively integrates with Happy Org's existing systems, streamlines efficiency, and enhances the user experience when navigating Happy Org products.
+
+The key terms of our partnership are as follows:
+
+Sponsorship: Happy Org will provide financial support of $25,000 for the chatbot development with Osan3, reinforcing their position as an industry innovator.
+Length of program:
+Chatbot Development: Osan3 will develop a locally installed and fully-owned chatbot capable of executing Happy Org APIs, answering questions about Happy Org data for specific use cases, and assisting users in navigating Happy Org products.
+Access to and Governance Control of Open-Source Chatbot Projects: Osan3 will provide access to promising open-source projects relevant to the chatbots, allowing Happy Org to actively contribute to and shape the future of these innovative solutions.
+Ownership: Upon the projects' exit from the Alpha Program, Happy Org will have the option to gain 80% governance control for $70,000.
+Alignment: Osan3 will gain 10% ownership in the Chatbot Alpha Program, aligning ourselves with the program's innovation and long-term success.
+Collaboration and Support: Happy Org will have the opportunity to collaborate with any Chatbot Alpha Program participants and provide guidance and support, showcasing their expertise and thought leadership.
+Promotion of the Chatbot Solution: Both parties will work together to promote the benefits of the chatbot solution within the target industry, focusing on highlighting Happy Org's innovative contributions and encouraging user engagement.
+Reporting and Accountability: Regular updates on the progress and financials of the sponsored alpha programs will be provided by Osan3 to Happy Org, ensuring transparency and alignment with strategic objectives.
+Confidentiality: Both parties agree to maintain confidentiality regarding the terms of this offer, associated materials, agreements, and any confidential information shared during the program. Confidential information includes non-public, commercially proprietary, or sensitive information or materials of the disclosing party, such as proprietary intellectual property.
+Feedback Waiver: The company acknowledges that they may receive feedback from Osan3, its affiliates, partners, directors, agents, employees, and mentors during the program. The company and participants agree to waive any claims against Osan3 Party related to the feedback, recognizing that it is advisory in nature and the final decision on whether to follow such feedback rests with the company.
+Waiver for Independent Development: Happy Org acknowledges that Osan3 Parties may already be evaluating, testing, or developing similar concepts, designs, or products as those created by participants during the program. Happy Org and the participants agree to waive any claims against Osan3 Party in connection with their consideration, use, or development of such similar concepts, designs, or products.”
