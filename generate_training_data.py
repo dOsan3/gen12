@@ -1,6 +1,6 @@
 # example.py
 import json
-import conversation_builder as cb
+from modules import conversation_builder as cb
 
 doc_name = "osan3-happy-org"
 id = "1"
