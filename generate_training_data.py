@@ -1,10 +1,15 @@
 import json
+import os
 import openai
 from modules import conversation_builder as cb
 from modules import text_reader
 
 def generate_training_data(prompt):
     # Call the OpenAI GPT-3 API
+    with open("openai_api_key", "r") as key_file:
+        openai_api_key = key_file.read().strip()
+
+    os.environ["OPENAI_API_KEY"] = openai_api_key
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
     questions_and_answer = openai.Completion.create(
