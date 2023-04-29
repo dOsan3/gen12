@@ -29,8 +29,22 @@ def generate_training_data(file_content):
             ]
         }
     ]
-############## Start
 
+def expand_answers(questions_and_answers):
+    # "What is the purpose of the Osan3 Alpha Program?"
+    # How much will Happy Org sponsor for the chatbot development?
+    for i, qa_pair in enumerate(questions_and_answers):
+        doc_name = "osan3-happy-org"
+        id = "1"
+        question = qa_pair[0]
+        answer = qa_pair[1]
+        training_data_json = cb.main(doc_name, id, question, answer)
+        more_answers = ["a1", "a2", "a3"]
+        for answer in more_answers:
+          cb.add_conversation(training_data_json, question, answer)
+    return training_data_json
+
+############## Start
 json_objects = []
 file_name = 'loi-osan3-happy-org.txt'
 file_content = text_reader.read_text_file(file_name)
@@ -47,7 +61,7 @@ prompt = "Generate diverse questions and answers in a json list, where each ques
 
 #
 #
-prompt_results = [
+questions_and_answers = [
 ["What is the purpose of the Osan3 Alpha Program?", "The purpose of the Osan3 Alpha Program is to develop a custom chatbot designed to meet the specific needs of Happy Org or its target industry."],
 ["How much financial support will Happy Org provide for the chatbot development?", "$25,000."],
 ["What will Osan3 provide in return for the financial support?", "Osan3 will create a tailored chatbot solution that effectively integrates with Happy Org's existing systems, streamlines efficiency, and enhances the user experience when navigating Happy Org products."],
@@ -60,8 +74,11 @@ prompt_results = [
 ["What is the nature of the feedback waiver agreed upon by the company and participants?", "The company and participants agree to waive any claims against Osan3 Party related to the feedback they receive, recognizing that it is advisory in nature and the final decision on whether to follow such feedback rests with the company."]
 ]
 
-question = print(prompt_results[3][1])
+#print(questions_and_answers[3][1])
 
+training_data = expand_answers(questions_and_answers)
+
+print(training_data)
 # Ask for diverse answers for each question.
 # put answers in an array [a1, a2, a3]
 
