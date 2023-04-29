@@ -35,16 +35,14 @@ def expand_answers(questions_and_answers):
     # How much will Happy Org sponsor for the chatbot development?
     doc_name = "osan3-happy-org"
     train_data = []
+    more_answers = ["a1", "a2", "a3"]
     for i, qa_pair in enumerate(questions_and_answers):
         id = i
         question = qa_pair[0]
         answer = qa_pair[1]
         training_data_json = cb.main(doc_name, id, question, answer)
-        more_answers = ["a1", "a2", "a3"]
-        cb.add_conversation(training_data_json, question, "a2")
-        #for answer in more_answers:
-        #  print(answer)
-        #  cb.add_conversation(training_data_json, question, answer)
+        for answer in more_answers:
+          cb.add_conversation(training_data_json, question, answer)
         train_data.append(training_data_json)
     return train_data
 
