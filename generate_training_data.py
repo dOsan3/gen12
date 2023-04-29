@@ -12,9 +12,9 @@ def generate_training_data(prompt):
     os.environ["OPENAI_API_KEY"] = openai_api_key
     openai.api_key = os.getenv("OPENAI_API_KEY")
 
-    questions_and_answer = openai.Completion.create(
+    questions_and_answers = openai.Completion.create(
       model="text-davinci-003",
-      prompt=prompt
+      prompt=prompt,
       temperature=0.7,
       max_tokens=256,
       top_p=1,
@@ -23,6 +23,11 @@ def generate_training_data(prompt):
     )
 
     # Get the generated questions and answers
+    print("questions_and_answers gpt response")
+    print("")
+    print("")
+    print(questions_and_answers)
+
     questions_and_answers = response.choices[0].text.strip()
 
     # Process the generated questions and answers
@@ -64,6 +69,10 @@ questions_and_answers = generate_training_data(prompt)
 training_data = expand_answers(questions_and_answers)
 
 pretty_training_data = json.dumps(training_data, indent=4)
+
+print("")
+print("")
+print("training_data")
 print(pretty_training_data)
 # Ask for diverse answers for each question.
 # put answers in an array [a1, a2, a3]
