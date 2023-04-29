@@ -6,6 +6,7 @@ from modules import text_reader
 def generate_training_data(file_content):
     prompt = "Generate diverse questions and answers useful for training an LLM on the following: " + file_content
 
+    # llm prompt response
     questions_and_answers = [
         {
             "id": "osan3-happy-org_1",
@@ -35,6 +36,7 @@ def expand_answers(questions_and_answers):
     # How much will Happy Org sponsor for the chatbot development?
     doc_name = "osan3-happy-org"
     train_data = []
+    # llm prompt response, 'generate more diverse answers from this question' and put the answers in the form ```["answer1, answer2, ...]```
     more_answers = ["a1", "a2", "a3"]
     for i, qa_pair in enumerate(questions_and_answers):
         id = i
@@ -80,7 +82,8 @@ questions_and_answers = [
 
 training_data = expand_answers(questions_and_answers)
 
-print(training_data)
+pretty_training_data = json.dumps(training_data, indent=4)
+print(pretty_training_data)
 # Ask for diverse answers for each question.
 # put answers in an array [a1, a2, a3]
 
