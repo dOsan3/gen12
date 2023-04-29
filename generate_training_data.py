@@ -5,13 +5,16 @@ from modules import text_reader
 
 def generate_training_data(prompt):
     # Call the OpenAI GPT-3 API
-    response = openai.Completion.create(
-        engine="davinci-codex",
-        prompt=prompt,
-        max_tokens=200,
-        n=1,
-        stop=None,
-        temperature=0.5
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+
+    questions_and_answer = openai.Completion.create(
+      model="text-davinci-003",
+      prompt=prompt
+      temperature=0.7,
+      max_tokens=256,
+      top_p=1,
+      frequency_penalty=0,
+      presence_penalty=0
     )
 
     # Get the generated questions and answers
