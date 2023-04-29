@@ -1,26 +1,15 @@
-April 25, 2023
+Generate Q&A pairs in json list: [ [question, answer, [question, answer] ... ] from content: ```April 25, 2023
 
-Subject: Non-binding Letter of Intent for Chatbot Development and Governance
+Subject: Non-binding LOI for Chatbot
 
-Dear Happy Org CEO and Happy Org Chairman
-
-This non-binding Letter of Intent ("LOI") presents the preliminary terms for Osan3 and Happy Org to work together on developing a chatbot for Happy Org and discussing the related governance rights.
-
-Key terms to be considered:
-
-Agreement: A formal software development contract will be negotiated and signed by both parties.
-Chatbot Development: Osan3 will create a custom chatbot tailored to Happy Org's requirements.
-License: Happy Org will have a broad license to use, modify, and sublicense the chatbot software.
-Governance Rights: Osan3 and Happy Org will discuss and agree on a governance model and Happy Org's potential purchase of governance rights.
-Intellectual Property: Ownership of intellectual property will depend on the data sources used in the software creation.
-Termination: The parties can terminate the future contract under certain conditions.
-Confidentiality: Both parties will maintain confidentiality.
-Representations and Warranties: Each party makes certain assurances about their abilities and resources.
-Indemnification: Each party agrees to indemnify the other under specific circumstances.
-Governing Law: To be determined, along with the dispute resolution process.
-Entire Agreement: This LOI represents the preliminary understanding of both parties.
-
-Please note that this LOI is not legally binding. We look forward to discussing this project with Happy Org further. If you have any questions, please contact us.
-
-Sincerely,
-Osan3 CEO
+Key terms:
+Agreement: Contract to be signed.
+Chatbot: Osan3 creates custom chatbot.
+License: Happy Org's usage rights.
+Governance: To be discussed.
+IP Ownership: Depends on data.
+Termination: Possible.
+Confidentiality: Maintained.
+Representations: Assurances given.
+Governing Law: TBD.
+Entire Agreement: LOI preliminary.
