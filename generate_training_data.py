@@ -28,7 +28,14 @@ def generate_training_data(prompt):
     print("")
     print(questions_and_answers)
 
-    questions_and_answers = response.choices[0].text.strip()
+    questions_and_answers = questions_and_answers['choices'][0]['text']
+
+    # Get the generated questions and answers
+    print("")
+    print("parsed gpt response")
+    print("")
+    print("")
+    print(questions_and_answers)
 
     # Process the generated questions and answers
     # You may need to adjust this code to match the format returned by GPT-3
