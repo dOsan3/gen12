@@ -149,7 +149,7 @@ sudo mount /dev/nvme1n1 /data
 
 Make sure weights and files are there for 13B
 
-Clone `git clone https://github.com/huggingface/transformers` if needed.
+Clone `git clone https://github.com/huggingface/transformers` if /accneeded.
 
 Create virtual env
 
@@ -184,6 +184,10 @@ cd ~/data/transformers
 pip install -e .
 ```
 
+```
+pip install -i https://pypi.org/simple/ huggingface-hub transformers
+```
+
 Add to path
 
 ```
@@ -205,13 +209,19 @@ pip install transformers
 Install accelerate, if neccessary (because you have too little cpu memory).
 
 ```
-pip install transformers
+pip install accelerate
 ```
 
 Install sentencepiece
 
 ```
 pip install sentencepiece
+```
+
+Install protobuff
+
+```
+pip install protobuff
 ```
 
 Create output file for conversion.
@@ -234,10 +244,25 @@ Your mounted ~/data directory should look as follows:
     └── venv/
 ```
 
-Run conversion script
+Apply Vicuna weights.
 
 ```
 python3 ~/data/transformers/src/transformers/models/llama/convert_llama_weights_to_hf.py     --input_dir ~/data/LLaMA/ --model_size 13B --output_dir ~/data/LLaMA_HuggingFace_Converted/
 ```
 
 Script should take about 15 minutes or so.
+
+Convert.
+
+```
+python3 -m fastchat.model.apply_delta \
+    --base-model-path ~/data/LLaMA_HuggingFace_Conversion \
+    --target-model-path ~/datavicuna-13b \
+    --delta-path lmsys/vicuna-13b-delta-v1.1
+```
+
+Run cli.
+
+```
+python3 -m fastchat.serve.cli --model-path /path/to/model/weights --device cpu
+```
