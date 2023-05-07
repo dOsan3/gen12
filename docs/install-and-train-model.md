@@ -129,3 +129,115 @@ torchrun --nproc_per_node=4 --master_port=20001 fastchat/train/train_mem.py \
     --gradient_checkpointing True \
     --lazy_preprocess True
 ```
+
+## Weight conversion
+
+
+Launch r5.2xlarge (64GB CPU RAM) instance
+
+```
+mkdir data
+```
+
+Attach volume (e.g. 100GB) in same region (select correct subnet if needed)
+
+Mount volume
+
+```
+sudo mount /dev/nvme1n1 /data
+```
+
+Make sure weights and files are there for 13B
+
+Clone `git clone https://github.com/huggingface/transformers` if needed.
+
+Create virtual env
+
+```
+sudo apt update
+```
+
+```
+sudo apt install python3-pip
+```
+
+
+```
+pip install virtualenv
+```
+
+```
+python -m virtualenv venv
+```
+
+```
+source venv/bin/activate
+```
+
+install dependencies
+
+```
+cd ~/data/transformers
+```
+
+```
+pip install -e .
+```
+
+Add to path
+
+```
+echo "export PATH=$PATH:/home/ubuntu/.local/bin" >> ~/.bashrc
+```
+
+Install torch, if neccessary.
+
+```
+pip install torch torchvision -f https://download.pytorch.org/whl/cpu/torch_stable.html
+```
+
+Install transformers, if neccessary.
+
+```
+pip install transformers
+```
+
+Install accelerate, if neccessary (because you have too little cpu memory).
+
+```
+pip install transformers
+```
+
+Install sentencepiece
+
+```
+pip install sentencepiece
+```
+
+Create output file for conversion.
+
+```
+mkdir ~/data/LLaMA_HuggingFace_Converted
+```
+
+Your mounted ~/data directory should look as follows:
+
+```
+.
+└── data
+    ├── llama.sh
+    ├── tokenizer.model
+    ├── tokenizer_checklist.chk
+    ├── LLaMA/
+    └─────13B/
+    ├── transformers/
+    └── venv/
+```
+
+Run conversion script
+
+```
+python3 ~/data/transformers/src/transformers/models/llama/convert_llama_weights_to_hf.py     --input_dir ~/data/LLaMA/ --model_size 13B --output_dir ~/data/LLaMA_HuggingFace_Converted/
+```
+
+Script should take about 15 minutes or so.
